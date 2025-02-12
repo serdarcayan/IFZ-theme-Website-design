@@ -1,0 +1,277 @@
+/* Renk Paleti Tanımları */
+:root {
+    --primary-bg: #121212;
+    --secondary-bg: rgba(0, 0, 0, 0.8);
+    --blur-bg: rgba(0, 0, 0, 0.6);
+    --text-color: white;
+    --border-color: white;
+    --hover-bg: white;
+    --hover-text: black;
+    --shadow-color: rgba(0, 0, 0, 0.6);
+    --max-width: 1300px;
+    --concept-color: #ff0000;
+}
+
+[data-theme="light"] {
+    --primary-bg: #ffffff;
+    --secondary-bg: rgba(255, 255, 255, 0.8);
+    --blur-bg: rgba(255, 255, 255, 0.6);
+    --text-color: black;
+    --border-color: black;
+    --hover-bg: black;
+    --hover-text: white;
+    --shadow-color: rgba(223, 223, 223, 0.6);
+}
+
+/* Genel stiller */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    transition: background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        filter 0.3s ease,
+        transform 0.3s ease;
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+
+
+
+
+
+/* Sticky Navbar */
+.navbar {
+    --sections: 3;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: var(--secondary-bg);
+    box-shadow: 0px 2px 8px var(--shadow-color);
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+.navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: var(--max-width);
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / var(--sections));
+}
+
+.logoContainer .logo {
+    height: 40px;
+    filter: drop-shadow(0 0 3px var(--shadow-color));
+}
+
+.menuContainer {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: calc(100% / var(--sections));
+}
+
+.menuContainer .menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.menuContainer .menu .menuItem {
+    font: 600 16px Arial, sans-serif;
+}
+
+.menuContainer .menu .menuItem .menuLink {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.searchContainer{
+       width: calc(100% / var(--sections));
+}
+
+.searchContainer form{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+}
+
+.searchContainer .search {
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    outline: none;
+    padding: 5px 10px;
+}
+
+.searchContainer .searchButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    background: var(--hover-bg);
+    color: var(--hover-text);
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+
+
+
+header {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.branchsContainer {
+    width: 100%;
+    max-width: var(--max-width);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--secondary-bg);
+    box-shadow: 0px 0px 8px var(--shadow-color);
+    position: relative;
+}
+
+.branchsContainer ul {
+    width: 100%;
+    max-width: var(--max-width);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+.branchsContainer ul li {
+    font: 600 14px Arial, sans-serif;
+    z-index: 2;
+    width: calc(var(--max-width) / 9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.branchsContainer ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Home Section */
+.home {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+.content {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    max-width: var(--max-width);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url(../img/khamazat.webp) no-repeat center center/cover;
+    border-radius: 15px;
+    box-shadow: 0px 0px 8px var(--shadow-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    filter: drop-shadow(0 0 3px var(--shadow-color));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.themeToggle {
+    width: 5vh;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 1%;
+    right: 1%;
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.themeToggle:hover {
+    background: var(--hover-bg);
+    color: var(--hover-text);
+}
+
+
+
+
+
+
+.active{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0px;
+    bottom: 0px;
+    background-color: var(--concept-color);
+    border-radius: 5px;
+    transition: 0.5s ease;
+}
