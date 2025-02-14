@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Section Scroll</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            height: 300vh; /* Sayfanın kaydırılabilir olması için ekstra yükseklik */
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .section {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            transition: transform 0.1s linear;
+        }
+
+        .section:nth-child(1) { background: rgba(255, 0, 0, 0.8); z-index: 3; }
+        .section:nth-child(2) { background: rgba(0, 255, 0, 0.8); z-index: 2; }
+        .section:nth-child(3) { background: rgba(0, 0, 255, 0.8); z-index: 1; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="section" id="section1">Bölüm 1</div>
+        <div class="section" id="section2">Bölüm 2</div>
+        <div class="section" id="section3">Bölüm 3</div>
+    </div>
+
+    <script>
+        document.addEventListener("scroll", () => {
+            let scrollTop = window.scrollY;
+            let sections = document.querySelectorAll(".section");
+
+            sections.forEach((section, index) => {
+                let speed = (index + 1) * 0.4; // Katmanların farklı hızlarda hareket etmesi
+                section.style.transform = `translateY(${scrollTop * speed * -0.2}px)`;
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 class ActiveIndicator {
     constructor(activeElement, container) {
-        this.activeElement = activeElement; // .active öğesi
+        this.activeElement = activeElement; // .indicator öğesi
         this.container = container; // Menü öğeleri bulunan container
         this.items = this.container.querySelectorAll('.indicate'); // Menü öğeleri
         this.init(); // Başlatma
@@ -42,7 +42,7 @@ class ActiveIndicator {
 
 // Sayfa yüklendiğinde aktif öğeyi başlat
 window.onload = () => {
-    const activeElement = document.querySelector('.active');
+    const activeElement = document.querySelector('.indicator');
     const container = document.querySelector('.branchsContainer');
     const activeBranchIndicator = new ActiveIndicator(activeElement, container); // ActiveIndicator sınıfını başlat
 };
